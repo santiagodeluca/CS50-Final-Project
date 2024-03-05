@@ -2,8 +2,19 @@
 
 {% block main %}
 
+    <h1 class="fifteen">Welcome to LearnWords!</h1>
+
+
     <div>
-        hello, world
+        In this page you will be able to learn new words based on their difficlty, 
+        while doing it as a game! Insert here the text you want to learn new vocab
+        from and then select a complexity level. Good luck and learn words!
+    </div>
+
+    <div>
+        <form action="/" method="post">
+            <input autocomplete="off" autofocus="off" type="text" class="custom-input" name="text">
+        </form>
     </div>
 
 {% endblock %}
