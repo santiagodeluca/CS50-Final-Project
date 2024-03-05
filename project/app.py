@@ -22,12 +22,12 @@ impossible = []
 
 learned = []
 
+
 @app.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
         db = get_db()
         cursor = db.cursor()
-        print("hello")
         text = request.form.get("text")
         list = re.findall(r'\b\w+\b', text)
 
@@ -53,20 +53,42 @@ def index():
 
 @app.route("/learn", methods=["GET", "POST"])
 def learn():
-        return render_template("learn.html")
+    try:
+            ex1 = basic[0]
+    except IndexError:
+            ex1 = None 
+    try:
+            ex2 = moderate[0]
+    except IndexError:
+            ex2 = None 
+    try:
+            ex3 = hard[0]
+    except IndexError:
+            ex3 = None 
+    try:
+            ex4 = impossible[0]
+    except IndexError:
+            ex4 = None 
+
+    return render_template("learn.html", basic_list=basic, moderate_list=moderate, hard_list=hard, impossible_list=impossible, 
+                            basic_word=ex1, moderate_word=ex2, hard_word=ex3, impossible_word=ex4)
     
 
-@app.route("/learn/easy")
-def learn_easy():
-        return render_template("play.html", list=basic)
+@app.route("/learn/basic")
+def learn_basic():
+        eas_len = len(basic)
+        return render_template("play.html", list=basic, len=eas_len)
 @app.route("/learn/moderate")
 def learn_moderate():
-        return render_template("play.html", list=moderate)
+        mod_len = len(moderate)
+        return render_template("play.html", list=moderate, len=mod_len)
 @app.route("/learn/hard")
 def learn_hard():
-        return render_template("play.html", list=hard)
+        har_len = len(hard)
+        return render_template("play.html", list=hard, len=har_len)
 @app.route("/learn/impossible")
 def learn_impossible():
-        return render_template("play.html", list=impossible)
+        imp_len = len(impossible)
+        return render_template("play.html", list=impossible, len=imp_len)
         
 

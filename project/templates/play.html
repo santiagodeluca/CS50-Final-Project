@@ -2,27 +2,33 @@
 
 {% block main %}
 
-<div class="card align-middle align-items-center" style="width: 50rem;">
+
+<div id="card1" class="card align-middle align-items-center" style="width: 50rem;">
     <img src="" class="card-img-top">
     <div class="card-body">
         <h3 id="word" class="card-title"></h3>
-        <p class="card-text">
+        <p id="p" class="card-text">
             Learn the word in <a id="link1" href="">Cambridge Dictionary</a>
             or in <a id="link2" href="">Merriam-Webster Dictionary</a>
         </p>
-      <button id="button" class="btn btn-primary">I know it!</button>
+    <button id="button" href="" class="btn btn-success">I know it!</button>
+    <a id="back" class="btn btn-primary" href="/learn" role="button" hidden >Go back</a>
     </div>
-  </div>
+</div>
+
 
 <script>
     var word = document.getElementById("word");
+    var p = document.getElementById("p");
     var link1 = document.getElementById("link1");
     var link2 = document.getElementById("link2");
     var button = document.getElementById("button");
+    var back = document.getElementById("back");
 
     let index = 0;
 
     let word_list = JSON.parse('{{ list | tojson | safe }}');
+    let length = word_list.length;
 
     function displayWord () {
         word.textContent = word_list[index].toUpperCase();
@@ -32,6 +38,17 @@
 
     function knowWord() {
         index += 1;
+        if (index >= length) {
+            link1.textContent = "";
+            link2.textContent = "";
+            word.textContent = "Amazing!";
+            p.textContent = "You learned all words in this section, go back to learn more.";
+            button.hidden = true;
+            back.hidden = false;
+            index = 0;
+
+            return;
+        }
         displayWord();
     }
 
