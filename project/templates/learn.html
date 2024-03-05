@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h1 class="five">Pick a difficulty level!</h1>
+
+<div class="card" style="width: 18rem;">
+    <img src="static/really happy.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Easy words</h5>
+      <p class="card-text">Some really common words you might already know like "{{ easy_word1 }}" , "{{ easy_word2 }}", etc.</p>
+      <a href="/learn/easy" class="btn btn-primary">Let's go!</a>
+    </div>
+  </div>
+
+<div class="card" style="width: 18rem;">
+    <img src="static/happy.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Moderate words</h5>
+      <p class="card-text">Words that are used on a weekly basis like "{{ moderate_word1 }}" , "{{ moderate_word2 }}", etc.</p>
+      <a href="/learn/moderate" class="btn btn-primary">I'm ready!</a>
+    </div>
+  </div>
+
+<div class="card" style="width: 18rem;">
+    <img src="static/neutral.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Hard words</h5>
+      <p class="card-text">Words you'll rarely hear like "{{ hard_word1 }}" , "{{ hard_word2 }}", etc.</p>
+      <a href="/learn/hard" class="btn btn-primary">I can do it!</a>
+    </div>
+  </div>
+
+<div class="card" style="width: 18rem;">
+    <img src="static/sad.png" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Impossible words</h5>
+      <p class="card-text">Words you most probably have never heard like "{{ impossible_word1 }}" , "{{ impossible_word2 }}", etc.</p>
+      <a href="/learn/impossible" class="btn btn-primary">I'll try!</a>
+    </div>
+  </div>
+  
+{% endblock %}

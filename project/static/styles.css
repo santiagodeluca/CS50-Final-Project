@@ -1,0 +1,21 @@
+.fifteen {
+    padding-top: 15%;
+}
+
+.five {
+    padding-top: 5%;
+}
+
+.custom-input {
+    width: 800px; 
+    height: 300px;
+  }
+
+.center-vertical {
+    display: flex;
+    align-items: center; 
+}
+
+.hundred {
+    height: 100%;
+}

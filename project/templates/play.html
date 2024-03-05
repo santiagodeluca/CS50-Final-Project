@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="card align-middle align-items-center" style="width: 50rem;">
+    <img src="" class="card-img-top">
+    <div class="card-body">
+        <h3 id="word" class="card-title"></h3>
+        <p class="card-text">
+            Learn the word in <a id="link1" href="">Cambridge Dictionary</a>
+            or in <a id="link2" href="">Merriam-Webster Dictionary</a>
+        </p>
+      <button id="button" class="btn btn-primary">I know it!</button>
+    </div>
+  </div>
+
+<script>
+    var word = document.getElementById("word");
+    var link1 = document.getElementById("link1");
+    var link2 = document.getElementById("link2");
+    var button = document.getElementById("button");
+
+    let index = 0;
+
+    let word_list = JSON.parse('{{ list | tojson | safe }}');
+
+    function displayWord () {
+        word.textContent = word_list[index].toUpperCase();
+        link1.href = "https://dictionary.cambridge.org/dictionary/english/" + word_list[index];
+        link2.href = "https://www.merriam-webster.com/dictionary/" + word_list[index];
+    }
+
+    function knowWord() {
+        index += 1;
+        displayWord();
+    }
+
+    button.addEventListener('click', knowWord);
+
+    displayWord();
+
+</script>
+
+{% endblock%}
