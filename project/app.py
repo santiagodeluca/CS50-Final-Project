@@ -29,9 +29,12 @@ def index():
         db = get_db()
         cursor = db.cursor()
         text = request.form.get("text")
-        list = re.findall(r'\b\w+\b', text)
+        tmp = re.findall(r'\b\w+\b', text)
+        tmpset = set(tmp)
+        word_list = list(tmpset)
 
-        for word in list:
+
+        for word in word_list:
             lower = word.lower()
             cursor.execute("SELECT id FROM words WHERE word = (?)", (lower,))
             result = cursor.fetchall()
