@@ -30,24 +30,29 @@ def index():
         cursor = db.cursor()
         text = request.form.get("text")
         tmp = re.findall(r'\b\w+\b', text)
-        tmpset = set(tmp)
+        tmp1 = [x.lower() for x in tmp]
+        tmpset = set(tmp1)
         word_list = list(tmpset)
+        print(word_list)
+        print(f"{len(word_list)}")
 
 
         for word in word_list:
             lower = word.lower()
+            print(lower)
             cursor.execute("SELECT id FROM words WHERE word = (?)", (lower,))
             result = cursor.fetchall()
-            number = int(result[0][0])
+            if result:
+                number = int(result[0][0])
 
-            if number > 0 and number < 9000:
-                basic.append(word)
-            elif number > 8999 and number < 25000:
-                moderate.append(word)
-            elif number > 24999 and number < 40000:
-                hard.append(word)
-            else:
-                impossible.append(word)
+                if number > 0 and number < 9000:
+                        basic.append(word)
+                elif number > 8999 and number < 25000:
+                        moderate.append(word)
+                elif number > 24999 and number < 40000:
+                        hard.append(word)
+                else:
+                        impossible.append(word)
 
         return redirect("/learn")
 
