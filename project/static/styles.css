@@ -5,7 +5,7 @@ body {
 
 .text-style {
     color: white;
-    text-shadow: 1px 1px 0px #DAB5CF;
+    text-shadow: 2px 2px 0px #DAB5CF;
 }
 .fifteen {
     padding-top: 15%;
@@ -31,25 +31,9 @@ body {
     height: 100%;
 }
 
-.button1 {
-background-color: #369DDC;
+.custom-outline {
+border-color: white;
 color: white;
-text-shadow: 1px 1px 0px black;
-}
-.button2 {
-background-color: #7BBA39;
-color: white;
-text-shadow: 1px 1px 0px black;
-}
-.button3 {
-background-color: #FDFA29;
-color: white;
-text-shadow: 1px 1px 0px black;
-}
-.button4 {
-background-color: #FF4325;
-color: white;
-text-shadow: 1px 1px 0px black;
 }
 
 .div-paading {
