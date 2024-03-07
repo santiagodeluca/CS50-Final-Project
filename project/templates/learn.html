@@ -5,45 +5,45 @@
 <h1 class="five">Pick a difficulty level!</h1>
 
 {% if basic_list %}
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 20rem; height: 30rem;">
       <img src="static/really happy.png" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">Basic words</h5>
-        <p class="card-text">Some really common words you might already know like "{{ basic_word }}".</p>
-        <a href="/learn/basic" class="btn btn-primary">Let's go!</a>
+        <p class="card-text">Some really common words you might already know like "{{ basic_list[0] }}".</p>
+        <a href="/learn/basic" class="btn button1">Let's go!</a>
       </div>
   </div>
 {% endif %}
 
 {% if moderate_list %}
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 20rem; height: 30rem;">
       <img src="static/happy.png" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">Moderate words</h5>
-        <p class="card-text">Words that are used on a weekly basis like "{{ moderate_word }}".</p>
-        <a href="/learn/moderate" class="btn btn-primary">I'm ready!</a>
+        <p class="card-text">Words that are used on a weekly basis like "{{ moderate_list[0] }}".</p>
+        <a href="/learn/moderate" class="btn button2">I'm ready!</a>
       </div>
   </div>
 {% endif %}
 
 {% if hard_list %}
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 20rem; height: 30rem;">
       <img src="static/neutral.png" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">Hard words</h5>
-        <p class="card-text">Words you'll rarely hear like "{{ hard_word }}".</p>
-        <a href="/learn/hard" class="btn btn-primary">I can do it!</a>
+        <p class="card-text">Words you'll rarely hear like "{{ hard_list[0] }}".</p>
+        <a href="/learn/hard" class="btn button3">I can do it!</a>
       </div>
   </div>
 {% endif %}
 
 {% if impossible_list %}
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 20rem; height: 30rem;">
       <img src="static/sad.png" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">Impossible words</h5>
-        <p class="card-text">Words you most probably have never heard like "{{ impossible_word }}".</p>
-        <a href="/learn/impossible" class="btn btn-primary">I'll try!</a>
+        <p class="card-text">Words you most probably have never heard like "{{ impossible_list[0] }}".</p>
+        <a href="/learn/impossible" class="btn button4">I'll try!</a>
       </div>
   </div>
 {% endif %}

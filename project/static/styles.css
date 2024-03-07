@@ -11,11 +11,35 @@
     height: 300px;
   }
 
-.center-vertical {
-    display: flex;
-    align-items: center; 
+.center-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .hundred {
     height: 100%;
 }
+
+.button1 {
+background-color: #369DDC;
+color: white;
+text-shadow: 1px 1px 0px black;
+}
+.button2 {
+background-color: #7BBA39;
+color: white;
+text-shadow: 1px 1px 0px black;
+}
+.button3 {
+background-color: #FDFA29;
+color: white;
+text-shadow: 1px 1px 0px black;
+}
+.button4 {
+background-color: #FF4325;
+color: white;
+text-shadow: 1px 1px 0px black;
+}
+

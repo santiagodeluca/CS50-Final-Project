@@ -2,9 +2,14 @@ import re
 import sqlite3
 
 from flask import Flask, redirect, render_template, request, session, g
-
+from flask_session import Session
 
 app = Flask(__name__)
+
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
 app.config['DEBUG'] = True
 
 app.config['DATABASE'] = 'words.db'
@@ -15,17 +20,14 @@ def get_db():
         g.db.row_factory = sqlite3.Row
     return g.db
 
-basic = []
-moderate = []
-hard = []
-impossible = []
-
-learned = []
-
-
 @app.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
+        session['basic'] = []
+        session['moderate'] = []
+        session['hard'] = []
+        session['impossible'] = []
+
         db = get_db()
         cursor = db.cursor()
         text = request.form.get("text")
@@ -33,26 +35,23 @@ def index():
         tmp1 = [x.lower() for x in tmp]
         tmpset = set(tmp1)
         word_list = list(tmpset)
-        print(word_list)
-        print(f"{len(word_list)}")
-
 
         for word in word_list:
             lower = word.lower()
-            print(lower)
             cursor.execute("SELECT id FROM words WHERE word = (?)", (lower,))
             result = cursor.fetchall()
             if result:
                 number = int(result[0][0])
 
                 if number > 0 and number < 9000:
-                        basic.append(word)
+                        session['basic'].append(word)
                 elif number > 8999 and number < 25000:
-                        moderate.append(word)
+                        session['moderate'].append(word)
                 elif number > 24999 and number < 40000:
-                        hard.append(word)
+                        session['hard'].append(word)
                 else:
-                        impossible.append(word)
+                        print(f'{word}')
+                        session['impossible'].append(word)
 
         return redirect("/learn")
 
@@ -61,42 +60,31 @@ def index():
 
 @app.route("/learn", methods=["GET", "POST"])
 def learn():
-    try:
-            ex1 = basic[0]
-    except IndexError:
-            ex1 = None 
-    try:
-            ex2 = moderate[0]
-    except IndexError:
-            ex2 = None 
-    try:
-            ex3 = hard[0]
-    except IndexError:
-            ex3 = None 
-    try:
-            ex4 = impossible[0]
-    except IndexError:
-            ex4 = None 
+    eas_len = len(session['basic'])
+    mod_len = len(session['moderate'])
+    har_len = len(session['hard'])
+    imp_len = len(session['impossible'])
 
-    return render_template("learn.html", basic_list=basic, moderate_list=moderate, hard_list=hard, impossible_list=impossible, 
-                            basic_word=ex1, moderate_word=ex2, hard_word=ex3, impossible_word=ex4)
+    return render_template("learn.html", basic_list=session['basic'], moderate_list=session['moderate'], 
+                           hard_list=session['hard'], impossible_list=session['impossible'], eas_len=eas_len,
+                           mod_len=mod_len, har_len=har_len, imp_len=imp_len)
     
 
 @app.route("/learn/basic")
 def learn_basic():
-        eas_len = len(basic)
-        return render_template("play.html", list=basic, len=eas_len)
+        eas_len = len(session['basic'])
+        return render_template("play.html", list=session['basic'], len=eas_len)
 @app.route("/learn/moderate")
 def learn_moderate():
-        mod_len = len(moderate)
-        return render_template("play.html", list=moderate, len=mod_len)
+        mod_len = len(session['moderate'])
+        return render_template("play.html", list=session['moderate'], len=mod_len)
 @app.route("/learn/hard")
 def learn_hard():
-        har_len = len(hard)
-        return render_template("play.html", list=hard, len=har_len)
+        har_len = len(session['hard'])
+        return render_template("play.html", list=session['hard'], len=har_len)
 @app.route("/learn/impossible")
 def learn_impossible():
-        imp_len = len(impossible)
-        return render_template("play.html", list=impossible, len=imp_len)
+        imp_len = len(session['impossible'])
+        return render_template("play.html", list=session['impossible'], len=imp_len)
         
 
