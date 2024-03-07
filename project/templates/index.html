@@ -2,20 +2,32 @@
 
 {% block main %}
 
-    <div class="center-middle">
-        <h1 >Welcome to LearnWords!</h1>
+    <div class="center-middle text-style">
+        <h1>Welcome to LearnWords!</h1>
 
-        <div>
+        <h3 class="text-style" style="padding-inline: 23%;">
             In this page you will be able to learn new words based on their difficlty, 
             while doing it as a game! Insert here the text you want to learn new vocab
             from and then select a complexity level. Good luck and learn words!
-        </div>
+        </h3>
 
         <div>
-            <form action="/" method="post">
-                <input autocomplete="off" autofocus="off" type="text" class="custom-input" name="text">
+            <form action="/" method="post" id="myform">
+                <textarea class="form-control custom-textarea mx-auto" rows="8" style="width: 730px;" placeholder="Enter your text here" name="text" id="text"></textarea>
             </form>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var textarea = document.getElementById('text')
+            textarea.addEventListener('keypress', function(event) {
+                if (event.keyCode === 13 && !event.shiftKey) { 
+                    event.preventDefault(); 
+                    document.getElementById('myform').submit(); 
+                } 
+            });
+        });
+    </script>
 
 {% endblock %}

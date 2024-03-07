@@ -1,3 +1,12 @@
+body {
+    background-image: url('../static/home-background.jpg');
+    background-size: cover;
+}
+
+.text-style {
+    color: white;
+    text-shadow: 1px 1px 0px #DAB5CF;
+}
 .fifteen {
     padding-top: 15%;
 }
@@ -41,5 +50,9 @@ text-shadow: 1px 1px 0px black;
 background-color: #FF4325;
 color: white;
 text-shadow: 1px 1px 0px black;
+}
+
+.div-paading {
+    padding-top: 300px;
 }
 

@@ -13,9 +13,9 @@
         </h2>
         <p id="p" class="card-text">
             Learn the word in <br>
-            <a id="link1" href="" role="button" class="btn btn-primary">Cambridge Dictionary</a><br>
-            <a id="link2" href="" role="button" class="btn btn-primary">Merriam-Webster Dictionary</a>
         </p>
+        <a id="link1" href="" role="button" class="btn" style="background-color: #981F1F; color: white;">Cambridge Dictionary</a><br>
+        <a id="link2" href="" role="button" class="btn mt-3" style="background-color: #104084; color: white;">Merriam-Webster Dictionary</a>
         <p id="p2"></p>
         <button id="button" href="" class="btn btn-success">I know it!</button>
         <a id="back" class="btn btn-primary" href="/learn" role="button" hidden >Go back</a>
@@ -49,8 +49,8 @@
         count.textContent = `${index}`;
 
         if (index >= length) {
-            link1.textContent = "";
-            link2.textContent = "";
+            link1.hidden = true;
+            link2.hidden = true;
             word.textContent = "Amazing!";
             p.textContent = "You learned all words in this section, go back to learn more.";
             button.hidden = true;
