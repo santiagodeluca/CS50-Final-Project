@@ -69,3 +69,10 @@ body {
 .gradient-background {
     background: linear-gradient(to bottom, #C0AFD1,  #8695C2);
 }
+
+
+.card {
+    flex: 0 0 calc(25% - 15px);
+    margin-bottom: 15px;
+    min-width: 350px;
+}

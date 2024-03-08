@@ -65,6 +65,8 @@ def learn():
     har_len = len(session['hard'])
     imp_len = len(session['impossible'])
 
+
+
     return render_template("learn.html", basic_list=session['basic'], moderate_list=session['moderate'], 
                            hard_list=session['hard'], impossible_list=session['impossible'], eas_len=eas_len,
                            mod_len=mod_len, har_len=har_len, imp_len=imp_len)

@@ -6,7 +6,7 @@
     <a class="nav-link text-style fs-3" aria-disabled="true">></a>
 </li>
 <li class="nav-item">
-    <a class="nav-link text-style fs-3" aria-current="page" href="/learn">Levels</a>
+    <a class="nav-link text-style fs-3" aria-current="page" href="/learn"><u>Levels</u></a>
 </li>
 
 {% endblock %}
@@ -14,64 +14,115 @@
 
 {% block main %}
 
-  <div class="container center-middle text-style">
+<h1 class="five text-style" id="title"></h1>
 
-    <h1 class="five" id="title">Pick a difficulty level!</h1>
+  <div class="container center-middle text-style" style="display: flex; justify-content: space-between;" id="cards">
+    <div class="card text-style custom-card-body" style="background-color: #C0AFD1; flex-grow: 1;">
+      <div class="card-body">
+        <h4 class="card-title">Basic words</h4>
+        
+        {% if basic_list %}
 
-    <div class="card-group" style="box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);">
+            <p class="card-text fs-4">Some really common words you might already know like "{{ basic_list[0] }}".</p>
+            <a href="/learn/basic" class="btn btn-outline custom-outline">Let's go!</a>
 
-      {% if basic_list %}
-      <div class="card text-style custom-card-body" style="background-color: #C0AFD1;">
-        <div class="card-body">
-          <h4 class="card-title">Basic words</h4>
-          <p class="card-text fs-4">Some really common words you might already know like "{{ basic_list[0] }}".</p>
-          <a href="/learn/basic" class="btn btn-outline custom-outline">Let's go!</a>
-          <p class="card-text"><small class="text-body-secondary">{{ eas_len }} words in this level.</small></p>
+        {% else %}
+
+            <p class="card-text fs-4">
+              No words of this level in your text! <br>
+              Go back and try with another text 
+            </p>
+            
+            {% endif %}
+            
+            <p class="card-text"><small class="text-body-secondary">{{ eas_len }} words in this level.</small></p>
+          </div>
         </div>
-      </div>
-      {% endif %}
+        
+        <div class="card text-style custom-card-body" style="background-color: #B4AACE; flex-grow: 1;">
+          <div class="card-body">
+            <h4 class="card-title">Moderate words</h4>
+            
+            {% if moderate_list %}
+              <p class="card-text fs-4">Words that might be used or heard on a weekly basis like "{{ moderate_list[0] }}".<br></p>
+              <a href="/learn/moderate" class="btn btn-outline custom-outline">I'm ready!</a>
+            
+            {% else %}
+    
+                <p class="card-text fs-4">
+                  No words of this level in your text! <br>
+                  Go back and try with another text 
+                </p>
+                
+            {% endif %}
 
-      {% if basic_list %}
-      <div class="card text-style custom-card-body" style="background-color: #B4AACE;">
-        <div class="card-body">
-          <h4 class="card-title">Moderate words</h4>
-          <p class="card-text fs-4">Words that might be used or heard on a weekly basis like "{{ moderate_list[0] }}".<br></p>
-          <a href="/learn/moderate" class="btn btn-outline custom-outline">I'm ready!</a>
-          <p class="card-text"><small class="text-body-secondary">{{ mod_len }} words in this level.</small></p>
-        </div>
-      </div>
-      {% endif %}
+                <p class="card-text"><small class="text-body-secondary">{{ mod_len }} words in this level.</small></p>
+              </div>
+            </div>
+            
+            <div class="card text-style custom-card-body" style="background-color: #9D9FC8; flex-grow: 1;">
+              <div class="card-body">
+                <h4 class="card-title">Hard words</h4>
 
-      {% if basic_list %}
-      <div class="card text-style custom-card-body" style="background-color: #9D9FC8;">
-        <div class="card-body">
-          <h4 class="card-title">Hard words</h4>
-          <p class="card-text fs-4">Words you'll rarely hear or that you may not know at all like "{{ hard_list[0] }}".</p>
-          <a href="/learn/hard" class="btn btn-outline custom-outline">I can do it!</a>
-          <p class="card-text"><small class="text-body-secondary">{{ har_len }} words in this level.</small></p>
-        </div>
-      </div>
-      {% endif %}
-      
-      {% if basic_list %}
-      <div class="card text-style custom-card-body" style="background-color: #8695C2;">
-        <div class="card-body">
-          <h4 class="card-title">Impossible words</h4>
-          <p class="card-text fs-4">Words you most probably have never heard like "{{ impossible_list[0] }}".</p>
-          <a href="/learn/impossible" class="btn btn-outline custom-outline">I'll try!</a>
-          <p class="card-text"><small class="text-body-secondary">{{ imp_len }} words in this level.</small></p>
-        </div>
-      </div>
-      {% endif %}
+                {% if hard_list %}
 
-    </div>
+                  <p class="card-text fs-4">Words you'll rarely hear or that you may not know at all like "{{ hard_list[0] }}".</p>
+                  <a href="/learn/hard" class="btn btn-outline custom-outline">I can do it!</a>
+
+                {% else %}
+        
+                    <p class="card-text fs-4">
+                      No words of this level in your text! <br>
+                      Go back and try with another text 
+                    </p>
+
+                {% endif %}
+
+                <p class="card-text"><small class="text-body-secondary">{{ har_len }} words in this level.</small></p>
+              </div>
+            </div>
+            
+            <div class="card text-style custom-card-body" style="background-color: #8695C2; flex-grow: 1;">
+              <div class="card-body">
+                <h4 class="card-title">Impossible words</h4>
+
+                {% if impossible_list %}
+
+                <p class="card-text fs-4">Words you most probably have never heard like "{{ impossible_list[0] }}".</p>
+                <a href="/learn/impossible" class="btn btn-outline custom-outline">I'll try!</a>
+
+                {% else %}
+        
+                    <p class="card-text fs-4">
+                      No words of this level in your text! <br>
+                      Go back and try with another text 
+                    </p>
+    
+                {% endif %}
+
+                <p class="card-text"><small class="text-body-secondary">{{ imp_len }} words in this level.</small></p>
+          </div>
+        </div>
+
   </div>
 
   <script>
-    if (!basic_list[0] && !moderate_list[0] && !hard_list[0] && !impossible_list[0]) {
-      title = document.getElementById('title')
-      title.innerText = 'No words to learn here!'
+    var basic_list = JSON.parse('{{ basic_list | tojson }}');
+    var moderate_list = JSON.parse('{{ moderate_list | tojson }}');
+    var hard_list = JSON.parse('{{ hard_list | tojson }}');
+    var impossible_list = JSON.parse('{{ impossible_list | tojson }}');
+
+    var title = document.getElementById('title');
+    var cards = document.getElementById('cards');
+
+    if (!basic_list.length && !moderate_list.length && !hard_list.length && !impossible_list.length) {
+        title.innerText = 'No words to learn in that text! They might be considered too basic for the purpose of this page, please go back and change you text.';
+        title.classList.add("center-middle");
+        cards.hidden = true;
+
+    } else {
+        title.innerText = 'Pick a difficulty level!';
     }
-  </script>
+</script>
 
 {% endblock %}
