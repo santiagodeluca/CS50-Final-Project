@@ -7,6 +7,12 @@ body {
     color: white;
     text-shadow: 2px 2px 0px #DAB5CF;
 }
+
+.custom-card-body {
+    height: 250px; 
+    width: 200px;
+}
+
 .fifteen {
     padding-top: 15%;
 }

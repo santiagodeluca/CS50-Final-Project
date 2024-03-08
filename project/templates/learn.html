@@ -9,45 +9,45 @@
     <div class="card-group">
 
       {% if basic_list %}
-      <div class="card text-style" style="background-color: #C0AFD1;">
+      <div class="card text-style custom-card-body" style="background-color: #C0AFD1;">
         <div class="card-body">
-          <h5 class="card-title">Basic words</h5>
-          <p class="card-text">Some really common words you might already know like "{{ basic_list[0] }}".</p>
+          <h4 class="card-title">Basic words</h4>
+          <p class="card-text fs-4">Some really common words you might already know like "{{ basic_list[0] }}".</p>
           <a href="/learn/basic" class="btn btn-outline custom-outline">Let's go!</a>
-          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
+          <p class="card-text"><small class="text-body-secondary">{{ eas_len }} words in this level.</small></p>
         </div>
       </div>
       {% endif %}
 
       {% if basic_list %}
-      <div class="card text-style" style="background-color: #B4AACE;">
+      <div class="card text-style custom-card-body" style="background-color: #B4AACE;">
         <div class="card-body">
-          <h5 class="card-title">Moderate words</h5>
-          <p class="card-text">Words that are used on a weekly basis like "{{ moderate_list[0] }}".</p>
+          <h4 class="card-title">Moderate words</h4>
+          <p class="card-text fs-4">Words that might be used or heard on a weekly basis like "{{ moderate_list[0] }}".<br></p>
           <a href="/learn/moderate" class="btn btn-outline custom-outline">I'm ready!</a>
-          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
+          <p class="card-text"><small class="text-body-secondary">{{ mod_len }} words in this level.</small></p>
         </div>
       </div>
       {% endif %}
 
       {% if basic_list %}
-      <div class="card text-style" style="background-color: #9D9FC8;">
+      <div class="card text-style custom-card-body" style="background-color: #9D9FC8;">
         <div class="card-body">
-          <h5 class="card-title">Hard words</h5>
-          <p class="card-text">Words you'll rarely hear like "{{ hard_list[0] }}".</p>
+          <h4 class="card-title">Hard words</h4>
+          <p class="card-text fs-4">Words you'll rarely hear or that you may not know at all like "{{ hard_list[0] }}".</p>
           <a href="/learn/hard" class="btn btn-outline custom-outline">I can do it!</a>
-          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
+          <p class="card-text"><small class="text-body-secondary">{{ har_len }} words in this level.</small></p>
         </div>
       </div>
       {% endif %}
       
       {% if basic_list %}
-      <div class="card text-style" style="background-color: #8695C2;">
+      <div class="card text-style custom-card-body" style="background-color: #8695C2;">
         <div class="card-body">
-          <h5 class="card-title">Impossible words</h5>
-          <p class="card-text">Words you most probably have never heard like "{{ impossible_list[0] }}".</p>
-          <a href="/learn/impossbile" class="btn btn-outline custom-outline">I'll try!</a>
-          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
+          <h4 class="card-title">Impossible words</h4>
+          <p class="card-text fs-4">Words you most probably have never heard like "{{ impossible_list[0] }}".</p>
+          <a href="/learn/impossible" class="btn btn-outline custom-outline">I'll try!</a>
+          <p class="card-text"><small class="text-body-secondary">{{ imp_len }} words in this level.</small></p>
         </div>
       </div>
       {% endif %}
