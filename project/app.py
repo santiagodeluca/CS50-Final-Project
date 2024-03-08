@@ -72,19 +72,26 @@ def learn():
 
 @app.route("/learn/basic")
 def learn_basic():
+        lvl1 = 'basic'
         eas_len = len(session['basic'])
-        return render_template("play.html", list=session['basic'], len=eas_len)
+        return render_template("play.html", list=session['basic'], len=eas_len, link=lvl1, level='Basic')
 @app.route("/learn/moderate")
 def learn_moderate():
+        lvl2 = 'moderate'
         mod_len = len(session['moderate'])
-        return render_template("play.html", list=session['moderate'], len=mod_len)
+        return render_template("play.html", list=session['moderate'], len=mod_len, link=lvl2, level='Moderate')
 @app.route("/learn/hard")
 def learn_hard():
+        lvl3 = 'hard'
         har_len = len(session['hard'])
-        return render_template("play.html", list=session['hard'], len=har_len)
+        return render_template("play.html", list=session['hard'], len=har_len, link=lvl3, level='Hard')
 @app.route("/learn/impossible")
 def learn_impossible():
+        lvl4 = 'impossible'
         imp_len = len(session['impossible'])
-        return render_template("play.html", list=session['impossible'], len=imp_len)
+        return render_template("play.html", list=session['impossible'], len=imp_len, link=lvl4, level='Impossible')
         
+@app.route("/about")
+def about():
+        return render_template("about.html")
 

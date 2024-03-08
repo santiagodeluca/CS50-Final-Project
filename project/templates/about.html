@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block navbar %}
+
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-disabled="true">></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-current="page" href="/about">About</a>
+</li>
+
+{% endblock %}
+
+{% block main %}
+
+    <div class="center-middle text-style">
+        <h1>About this project</h1>
+
+        <h3 style="padding-inline: 15%;">
+            This website is my final project for the CS50 course! The idea behind this  
+            was to create a site where people who are learning english can have a quick
+            way to see an categorize the words on a text, and learn them. This was 
+            something I always felt like I would love to use if it existed, mainly when
+            studying long texts and wanting to learn its vocab! 
+        </h3>
+        <h2>References</h2>
+        <h3 style="padding-inline: 15%;">
+            When trying to find way to determine wheter a word in enlish had a high or
+            low complexity level I thought a great to do so would be to use a list 
+            of frequently used words. Luckily, the github user 
+            <a href="https://github.com/hermitdave" style="text-decoration: none; color: #608ABA;">Hermit Dave</a> has popular 
+            repository called 
+            <a href="https://github.com/hermitdave/FrequencyWords" style="text-decoration: none; color: #608ABA;">FrequencyWords<a>
+            where there are multiple lists of words order by frequency of use in 
+            multiple languages. One of the is a 
+            <a href="https://github.com/hermitdave/FrequencyWords/blob/master/content/2018/en/en_50k.txt" style="text-decoration: none; color: #608ABA;">
+                50,000 word list
+            </a>
+            in english, which is the database I used as the center of this page. 
+        </h3>
+        
+
+
+{% endblock %}

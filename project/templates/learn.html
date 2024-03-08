@@ -1,12 +1,24 @@
 {% extends "layout.html" %}
 
+{% block navbar %}
+
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-disabled="true">></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-current="page" href="/learn">Levels</a>
+</li>
+
+{% endblock %}
+
+
 {% block main %}
 
   <div class="container center-middle text-style">
 
-    <h1 class="five">Pick a difficulty level!</h1>
+    <h1 class="five" id="title">Pick a difficulty level!</h1>
 
-    <div class="card-group">
+    <div class="card-group" style="box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);">
 
       {% if basic_list %}
       <div class="card text-style custom-card-body" style="background-color: #C0AFD1;">
@@ -54,5 +66,12 @@
 
     </div>
   </div>
+
+  <script>
+    if (!basic_list[0] && !moderate_list[0] && !hard_list[0] && !impossible_list[0]) {
+      title = document.getElementById('title')
+      title.innerText = 'No words to learn here!'
+    }
+  </script>
 
 {% endblock %}

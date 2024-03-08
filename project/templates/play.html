@@ -1,9 +1,30 @@
 {% extends "layout.html" %}
 
+{% block navbar %}
+
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-current="page" href="">></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-current="page" href="/learn">Levels</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-current="page" href="">></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link text-style fs-3" aria-current="page" href="/learn/{{ link }}">{{ level }}</a>
+</li>
+
+{% endblock %}
+
+
 {% block main %}
 
 
-<div id="card1" class="card border-light center-middle gradient-background border-0" style="width: 50rem;">
+<div id="card1" class="card border-light center-middle gradient-background border-0" style="width: 50rem; box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);">
     <div class="card-body">
         <h1 id="word" class="card-title text-style"></h3>
         <h2>

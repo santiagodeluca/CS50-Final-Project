@@ -5,7 +5,7 @@ body {
 
 .text-style {
     color: white;
-    text-shadow: 2px 2px 0px #DAB5CF;
+    text-shadow: 2px 2px 1px #DAB5CF;
 }
 
 .custom-card-body {
@@ -38,20 +38,22 @@ body {
 }
 
 .custom-outline {
-border-color: white;
-color: white;
+    border-color: white;
+    color: white;
 }
 
 .custom-outline1 {
-border-color: #981F1F;
-color: white;
-border-width: 3px;
+    border-color: #981F1F;
+    color: white;
+    border-width: 1px;
+    box-shadow: 1px 1px 1px black;
 }
 
 .custom-outline2 {
     border-color:  #104084;
     color: white;
-    border-width: 3px;
+    border-width: 1px;
+    box-shadow: 1px 1px 1px black;
 }
 
 .custom-outline3 {
