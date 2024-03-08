@@ -3,21 +3,21 @@
 {% block main %}
 
 
-<div id="card1" class="card align-middle align-items-center center-middle" style="width: 50rem;">
+<div id="card1" class="card border-light center-middle gradient-background border-0" style="width: 50rem;">
     <div class="card-body">
-        <h1 id="word" class="card-title"></h3>
+        <h1 id="word" class="card-title text-style"></h3>
         <h2>
-            <div id="count" style="display: inline;">0</div>
-            <div style="display: inline;">out of {{ len }}</div>
+            <div id="count" class="text-style" style="display: inline;">0</div>
+            <div style="display: inline;" class="text-style">out of {{ len }}</div>
         </h2>
-        <p id="p" class="card-text">
+        <p id="p" class="card-text text-style">
             Learn the word in <br>
         </p>
-        <a id="link1" href="" role="button" class="btn" style="background-color: #981F1F; color: white;">Cambridge Dictionary</a><br>
-        <a id="link2" href="" role="button" class="btn mt-3" style="background-color: #104084; color: white;">Merriam-Webster Dictionary</a>
-        <p id="p2"></p>
-        <button id="button" href="" class="btn btn-success">I know it!</button>
-        <a id="back" class="btn btn-primary" href="/learn" role="button" hidden >Go back</a>
+        <a id="link1" href="" role="button" class="btn btn-outline custom-outline1">Cambridge Dictionary</a><br>
+        <a id="link2" href="" role="button" class="btn btn-outline custom-outline2 mt-3">Merriam-Webster Dictionary</a>
+        <p id="p2" class="text-style"></p>
+        <button id="button" href="" class="btn btn-outline custom-outline3">I know it!</button>
+        <a id="back" class="btn btn-outline custom-outline3" href="/learn" role="button" hidden >Go back</a>
     </div>
 </div>
 

@@ -42,7 +42,28 @@ border-color: white;
 color: white;
 }
 
+.custom-outline1 {
+border-color: #981F1F;
+color: white;
+border-width: 3px;
+}
+
+.custom-outline2 {
+    border-color:  #104084;
+    color: white;
+    border-width: 3px;
+}
+
+.custom-outline3 {
+    border-color: #98B06F;
+    color: white;
+    border-width: 3px;
+}
+
 .div-paading {
     padding-top: 300px;
 }
 
+.gradient-background {
+    background: linear-gradient(to bottom, #C0AFD1,  #8695C2);
+}
