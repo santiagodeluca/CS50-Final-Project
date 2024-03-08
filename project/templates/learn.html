@@ -5,58 +5,53 @@
   <div class="container center-middle text-style">
 
     <h1 class="five">Pick a difficulty level!</h1>
-    <div class="container top-50 start-50 translate-middle">
-      <div class="card-group" style="width: 700px;">
 
-        {% if basic_list %}
-        <div class="card text-style" style="background-color: #C0AFD1;">
-          <div class="card-body">
-            <h5 class="card-title">Basic words</h5>
-            <p class="card-text">Some really common words you might already know like "{{ basic_list[0] }}".</p>
-            <a href="/learn/basic" class="btn btn-outline custom-outline">Let's go!</a>
-            <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
-          </div>
+    <div class="card-group">
+
+      {% if basic_list %}
+      <div class="card text-style" style="background-color: #C0AFD1;">
+        <div class="card-body">
+          <h5 class="card-title">Basic words</h5>
+          <p class="card-text">Some really common words you might already know like "{{ basic_list[0] }}".</p>
+          <a href="/learn/basic" class="btn btn-outline custom-outline">Let's go!</a>
+          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
         </div>
-        {% endif %}
-
-        {% if basic_list %}
-        <div class="card text-style" style="background-color: #B4AACE;">
-          <div class="card-body">
-            <h5 class="card-title">Moderate words</h5>
-            <p class="card-text">Words that are used on a weekly basis like "{{ moderate_list[0] }}".</p>
-            <a href="/learn/moderate" class="btn btn-outline custom-outline">I'm ready!</a>
-            <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        {% endif %}
-
       </div>
+      {% endif %}
 
-      <div class="card-group" style="width: 700px;">  
-
-        {% if basic_list %}
-        <div class="card text-style" style="background-color: #9D9FC8;">
-          <div class="card-body">
-            <h5 class="card-title">Hard words</h5>
-            <p class="card-text">Words you'll rarely hear like "{{ hard_list[0] }}".</p>
-            <a href="/learn/hard" class="btn btn-outline custom-outline">I can do it!</a>
-            <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
-          </div>
+      {% if basic_list %}
+      <div class="card text-style" style="background-color: #B4AACE;">
+        <div class="card-body">
+          <h5 class="card-title">Moderate words</h5>
+          <p class="card-text">Words that are used on a weekly basis like "{{ moderate_list[0] }}".</p>
+          <a href="/learn/moderate" class="btn btn-outline custom-outline">I'm ready!</a>
+          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
         </div>
-        {% endif %}
-        
-        {% if basic_list %}
-        <div class="card text-style" style="background-color: #8695C2;">
-          <div class="card-body">
-            <h5 class="card-title">Impossible words</h5>
-            <p class="card-text">Words you most probably have never heard like "{{ impossible_list[0] }}".</p>
-            <a href="/learn/impossbile" class="btn btn-outline custom-outline">I'll try!</a>
-            <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        {% endif %}
       </div>
+      {% endif %}
+
+      {% if basic_list %}
+      <div class="card text-style" style="background-color: #9D9FC8;">
+        <div class="card-body">
+          <h5 class="card-title">Hard words</h5>
+          <p class="card-text">Words you'll rarely hear like "{{ hard_list[0] }}".</p>
+          <a href="/learn/hard" class="btn btn-outline custom-outline">I can do it!</a>
+          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      {% endif %}
       
+      {% if basic_list %}
+      <div class="card text-style" style="background-color: #8695C2;">
+        <div class="card-body">
+          <h5 class="card-title">Impossible words</h5>
+          <p class="card-text">Words you most probably have never heard like "{{ impossible_list[0] }}".</p>
+          <a href="/learn/impossbile" class="btn btn-outline custom-outline">I'll try!</a>
+          <p class="card-text"><small class="text-body-secondary text-style">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      {% endif %}
+
     </div>
   </div>
 
