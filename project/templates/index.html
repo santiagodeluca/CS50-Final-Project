@@ -1,6 +1,8 @@
+<!--Welcome the user and explain the purspose of the site-->
 {% extends "layout.html" %}
 
 {% block navbar %}
+<!--No navbar element needed, the 'home' element is included in layout.html-->
 {% endblock %}
 
 {% block main %}
@@ -15,6 +17,7 @@
             learn words!
         </h3>
 
+        <!--Get the text from the user-->
         <div>
             <form action="/" method="post" id="myform">
                 <textarea class="form-control custom-textarea mx-auto" rows="8" style="width: 730px;" placeholder="Enter your text here" name="text" id="text"></textarea>
@@ -22,6 +25,7 @@
         </div>
     </div>
 
+    <!--Make the text-area to send text once 'enter' key is pressed-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var textarea = document.getElementById('text')

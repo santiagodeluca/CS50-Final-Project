@@ -1,5 +1,7 @@
+<!--Displays words to learn, gives links to their definition-->
 {% extends "layout.html" %}
 
+<!--Modify navbar according to the page being displayed-->
 {% block navbar %}
 
 <li class="nav-item">
@@ -15,6 +17,7 @@
 </li>
 
 <li class="nav-item">
+    <!--Set the navbar item to be the correct level-->
     <a class="nav-link text-style fs-3" aria-current="page" href="/learn/{{ link }}"><u>{{ level }}</u></a>
 </li>
 
@@ -29,20 +32,25 @@
         <h1 id="word" class="card-title text-style"></h3>
         <h2>
             <div id="count" class="text-style" style="display: inline;">0</div>
+            <!--Displays how many words are there to learn-->
             <div style="display: inline;" class="text-style">out of {{ len }}</div>
         </h2>
         <p id="p" class="card-text text-style">
             Learn the word in <br>
         </p>
+        <!--Links to dictionaries to learn the words-->
         <a id="link1" href="" role="button" class="btn btn-outline custom-outline1">Cambridge Dictionary</a><br>
         <a id="link2" href="" role="button" class="btn btn-outline custom-outline2 mt-3">Merriam-Webster Dictionary</a>
         <p id="p2" class="text-style"></p>
+        <!--Display next word-->
         <button id="button" href="" class="btn btn-outline custom-outline3">I know it!</button>
+        
+        <!--Once done, go back to the levels page-->
         <a id="back" class="btn btn-outline custom-outline3" href="/learn" role="button" hidden >Go back</a>
     </div>
 </div>
 
-
+<!--Change the word displayed and the word count as the user learns new words-->
 <script>
     var word = document.getElementById("word");
     var p = document.getElementById("p");
@@ -58,16 +66,21 @@
     let word_list = JSON.parse('{{ list | tojson | safe }}');
     let length = word_list.length;
 
+
     function displayWord () {
+        //Display new word
         word.textContent = word_list[index].toUpperCase();
+        //Update the dictionary link
         link1.href = "https://dictionary.cambridge.org/dictionary/english/" + word_list[index];
         link2.href = "https://www.merriam-webster.com/dictionary/" + word_list[index];
     }
 
     function knowWord() {
+        //Update word counter
         index += 1;
         count.textContent = `${index}`;
 
+        //Display new message and hide links when all words are learned
         if (index >= length) {
             link1.hidden = true;
             link2.hidden = true;
@@ -86,7 +99,7 @@
     }
 
     button.addEventListener('click', knowWord);
-
+    //Display the first word
     displayWord();
 
 </script>

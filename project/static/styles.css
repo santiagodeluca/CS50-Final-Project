@@ -1,3 +1,4 @@
+/*Set style for the site*/
 body {
     background-image: url('../static/home-background.jpg');
     background-size: cover;
@@ -8,33 +9,11 @@ body {
     text-shadow: 2px 2px 1px #DAB5CF;
 }
 
-.custom-card-body {
-    height: 250px; 
-    width: 200px;
-}
-
-.fifteen {
-    padding-top: 15%;
-}
-
-.five {
-    padding-top: 5%;
-}
-
-.custom-input {
-    width: 800px; 
-    height: 300px;
-  }
-
 .center-middle {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.hundred {
-    height: 100%;
 }
 
 .custom-outline {
@@ -62,14 +41,14 @@ body {
     border-width: 3px;
 }
 
-.div-paading {
-    padding-top: 300px;
-}
-
 .gradient-background {
     background: linear-gradient(to bottom, #C0AFD1,  #8695C2);
 }
 
+.custom-card-body {
+    height: 250px; 
+    width: 200px;
+}
 
 .card {
     flex: 0 0 calc(25% - 15px);

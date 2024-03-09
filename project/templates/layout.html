@@ -1,16 +1,22 @@
+<!--Set the layout for all routes on the site-->
 <!DOCTYPE html>
     <head>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <!--Include Bootstrap-->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-        <link href="../static/styles.css" rel="stylesheet">
+      <!--Include styles.css-->
+      <link href="../static/styles.css" rel="stylesheet">
 
-        <title>LearnWords!</title>
+      <title>LearnWords!</title>
 
     </head>
+
+    <!--Setting the background-->
     <body class="col-auto row justify-content-center text-center align-items-center d-flex h-100" style="background-image: url('../static/home-background.jpg');">
 
+         <!--Create dinamic navbar-->
         <nav class="navbar navbar-expand-lg navbar-transparent">
             <div class="container-fluid ms-4">
               <a class="navbar-brand text-style fs-3" href="/">Home</a>
@@ -20,10 +26,12 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
 
+                  <!--Create a block to let the other htmls add items to the navbar-->
                   {% block navbar %}{% endblock %}
 
                 </ul>
               </div>
+              <!--Let the user access the 'About' page from everywher in the site-->
               <div class="ms-auto me-3">
                 <ul class="navbar-nav">
                   <li class="nav-item">

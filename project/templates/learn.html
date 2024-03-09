@@ -1,5 +1,7 @@
+<!--Displays levels of complexity, lets the user choose which one to learn-->
 {% extends "layout.html" %}
 
+<!--Modify navbar according to the page being displayed-->
 {% block navbar %}
 
 <li class="nav-item">
@@ -11,10 +13,12 @@
 
 {% endblock %}
 
-
+<!--if-else conditionals are used to display the option to follow a level path(only if there are words on the list) 
+  or don't give the option(if there are no words in the list)-->
+<!--The first element of each list is put inside of <p> tags to give examples-->
 {% block main %}
 
-<h1 class="five text-style" id="title"></h1>
+<h1 class="text-style" id="title"></h1>
 
   <div class="container center-middle text-style" style="display: flex; justify-content: space-between;" id="cards">
     <div class="card text-style custom-card-body" style="background-color: #C0AFD1; flex-grow: 1;">
@@ -106,6 +110,7 @@
 
   </div>
 
+  <!--Handling situation where the user is not cooperating/has entered a text that is way too simple-->
   <script>
     var basic_list = JSON.parse('{{ basic_list | tojson }}');
     var moderate_list = JSON.parse('{{ moderate_list | tojson }}');
@@ -115,6 +120,7 @@
     var title = document.getElementById('title');
     var cards = document.getElementById('cards');
 
+    //Handle where there are no words to learn in a text (input is empty most probably)
     if (!basic_list.length && !moderate_list.length && !hard_list.length && !impossible_list.length) {
         title.innerText = 'No words to learn in that text! They might be considered too basic for the purpose of this page, please go back and change you text.';
         title.classList.add("center-middle");
