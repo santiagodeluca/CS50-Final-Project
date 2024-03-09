@@ -1,3 +1,4 @@
+# Create a webpage that lets the user learn the words in an inputted text
 import re
 import sqlite3
 
