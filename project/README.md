@@ -1,6 +1,6 @@
 # CS50-Final-Project
 # LearnWords
-### Video demo:
+### Video demo: https://youtu.be/IPx7x0Z4SNQ?si=wKsMLtJTr6g9yNMH
 # Description
 ## The idea
 ### This project was initially motivated by a need I had while learning english (I am from Argentina, a spanish-speaking country), specifically when learning words from large texts/books. Whenever I read books and loved the words used in them I just couldn't learn all the new vocabulary because finding the complex words among the more common ones was complicated. So in order to solve that problem, I wanted to design a webpage that allowed the user to input any text and get as a response a categorization of words depending on their complexity level, and their definition.
